@@ -33,3 +33,12 @@ Route::resource('deals', DealController::class)->names([
     'update' => 'deals.update',
     'destroy' => 'deals.destroy',
 ]);
+
+Route::resource('accounts', App\Http\Controllers\AccountsController::class)->names([
+    'index' => 'accounts.index',
+    'store' => 'accounts.store',
+    'show' => 'accounts.show',
+    'edit' => 'accounts.edit',
+    'update' => 'accounts.update',
+    'destroy' => 'accounts.destroy',
+]);

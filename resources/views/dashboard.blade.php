@@ -21,6 +21,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('deals.index') }}">Deals</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('accounts.index') }}">Accounts</a>
+                </li>
                 {{-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('tasks.index') }}">Tasks</a>
                 </li> --}}
@@ -64,6 +67,17 @@
                     <p class="fs-2 text-danger fw-bold">{{ $dealsCount }}</p>
                     <a href="{{ route('deals.index') }}" class="btn btn-outline-danger w-100 mt-2">
                         💼 عرض قائمة الـ Deals
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body text-center">
+                    <h4 class="card-title text-secondary">إجمالي الحسابات</h4>
+                    <p class="fs-2 text-warning fw-bold">{{ $accountsCount }}</p>
+                    <a href="{{ route('accounts.index') }}" class="btn btn-outline-warning w-100 mt-2">
+                        🏢 عرض قائمة الـ Accounts
                     </a>
                 </div>
             </div>

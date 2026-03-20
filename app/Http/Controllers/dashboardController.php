@@ -66,7 +66,18 @@ class dashboardController extends Controller
             $tasksCount = count($tasks);
         }
 
-        return view('dashboard', compact('contactsCount', 'leadsCount', 'dealsCount', 'tasksCount'));
+        // Get Accounts Count
+        $accountsResponse = Http::withToken($accessToken)
+            ->get(env('ZOHO_API_URL') . '/crm/v2/Accounts');
+
+        $accountsCount = 0;
+
+        if ($accountsResponse->successful()) {
+            $accounts = $accountsResponse->json('data');
+            $accountsCount = count($accounts);
+        }
+
+        return view('dashboard', compact('contactsCount', 'leadsCount', 'dealsCount', 'tasksCount', 'accountsCount'));
     }
 
 
