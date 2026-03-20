@@ -20,8 +20,9 @@ class dashboardController extends Controller
 
         // Get Contacts Count
 
+        $zohoApiUrl = env('ZOHO_API_URL', 'https://www.zohoapis.com');
         $contactsResponse = Http::withToken($accessToken)
-            ->get(env('ZOHO_API_URL') . '/crm/v2/Contacts');
+            ->get($zohoApiUrl . '/crm/v2/Contacts');
 
         $contactsCount = 0;
 

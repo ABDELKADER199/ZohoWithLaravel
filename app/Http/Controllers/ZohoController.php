@@ -12,7 +12,8 @@ class ZohoController extends Controller
 {
     public function redirectToZoho()
     {
-        $url = env('ZOHO_ACCOUNTS_URL') . '/oauth/v2/auth?' . http_build_query([
+        $zohoAccountsUrl = env('ZOHO_ACCOUNTS_URL', 'https://accounts.zoho.com');
+        $url = $zohoAccountsUrl . '/oauth/v2/auth?' . http_build_query([
             'client_id' => env('ZOHO_CLIENT_ID'),
             'redirect_uri' => env('ZOHO_REDIRECT_URI'),
             'response_type' => 'code',
